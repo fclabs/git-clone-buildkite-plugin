@@ -1,6 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "cloning repository ${BUILDKITE_PLUGIN_GIT_CLONE_REPOSITORY}"
+echo -n "cloning repository ${BUILDKITE_PLUGIN_GIT_CLONE_REPOSITORY}"
 
-git clone ${BUILDKITE_PLUGIN_GIT_CLONE_REPOSITORY}
+__BRANCH_OPT=""
+if [ -n "${BUILDKITE_PLUGIN_GIT_CLONE_BRANCH}" ];
+    __BRANCH_OPT="-b ${BUILDKITE_PLUGIN_GIT_CLONE_BRANCH}"
+    echo " with branch ${BUILDKITE_PLUGIN_GIT_CLONE_BRANCH}"
+else
+    echo ""
+fi
+
+git clone ${BUILDKITE_PLUGIN_GIT_CLONE_REPOSITORY} ${__BRANCH_OPT}

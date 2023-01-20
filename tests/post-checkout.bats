@@ -3,7 +3,8 @@
 load '/usr/local/lib/bats/load.bash'
 
 @test "Echos repository" {
-  export respository="git@github.com:first-aml/git-clone-buildkite-plugin.git"
+  export respository="git@github.com:fclabs/git-clone-buildkite-plugin.git"
+  export branch="test"
 
   stub git clone ${repository}
 
@@ -12,5 +13,5 @@ load '/usr/local/lib/bats/load.bash'
   unstub git
 
   assert_success
-  assert_output --partial "cloning repository git@github.com:first-aml/git-clone-buildkite-plugin.git"
+  assert_output --partial "cloning repository git@github.com:fclabs/git-clone-buildkite-plugin.git"
 }
