@@ -6,6 +6,6 @@ services:
       - ".:/plugin:ro"
   linter:
     image: buildkite/plugin-linter
-    command: ['--id', 'first-aml/git-clone']
+    command: ['--id', 'fclabs/git-clone-with-branch']
     volumes:
       - ".:/plugin:ro"

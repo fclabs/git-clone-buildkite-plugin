@@ -1,9 +1,12 @@
-name: Git Clone
-description: Simple git clone of an extra repository
-author: https://github.com/first-aml/
+name: GitCloneWithBranch
+version: "1.0"
+description: Simple git clone of an extra repository with branch. Fork from first-aml/git-clone-buildkite-plugin
+author: https://github.com/fclabs/
 requirements: []
 configuration:
   properties:
     repository: 
+      type: string
+    branch:
       type: string
   additionalProperties: false
